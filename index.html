@@ -12,7 +12,6 @@
             --text-color: #333;        /* 文字色 */
             --card-bg: #ffffff;        /* ボタン等の背景色 */
             --accent-color: #007AFF;   /* AppStoreブルー */
-            --insta-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
         body {
@@ -34,39 +33,48 @@
             text-align: center;
         }
 
-        /* プロフィール画像 */
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid white;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            margin-bottom: 15px;
-        }
-
         .name {
             font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 20px; /* 間隔を少し広げました */
         }
 
-        .bio {
-            font-size: 0.9rem;
+        /* --- 追加箇所：案内ボックスのデザイン --- */
+        .instruction-box {
+            background-color: #fff;
+            border: 2px dashed #ddd; /* 破線で囲って注釈感を出す */
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            line-height: 1.6;
             color: #666;
-            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .instruction-box strong {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .instruction-box i {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin: 0 2px;
+            color: #333;
         }
 
         /* リンクボタンの共通スタイル */
         .link-btn {
             display: flex;
             align-items: center;
-            justify-content: center; /* 中央揃え */
+            justify-content: center;
             text-decoration: none;
             background-color: var(--card-bg);
             color: var(--text-color);
             padding: 15px 20px;
-            border-radius: 50px; /* 丸みのあるボタン */
+            border-radius: 50px;
             margin-bottom: 15px;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
@@ -79,25 +87,22 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .link-btn i {
+        .link-btn i.icon-left {
             font-size: 1.5rem;
             margin-right: 10px;
             position: absolute;
             left: 20px;
         }
 
-        /* 各ボタンごとの特別設定 */
+        /* App Storeボタン */
         .app-store {
-            background-color: #000; /* 黒背景 */
+            background-color: #000;
             color: #fff;
+            /* 重要なボタンなので少し大きく目立たせる */
+            padding: 18px 20px;
+            font-size: 1.1rem;
         }
         
-        .instagram {
-            background: var(--card-bg);
-            color: #E1306C; /* インスタのブランドカラー */
-        }
-        
-        /* フッター */
         footer {
             margin-top: 40px;
             font-size: 0.8rem;
@@ -109,10 +114,19 @@
 
     <div class="container">
         <div class="name">KimitoQuest【キミクエ】</div>
+
+        <div class="instruction-box">
+            うまく開かない場合<br>
+            右上の「<i class="fa-solid fa-ellipsis"></i>」を押して、<br>
+            <strong>「ブラウザで開く」</strong>を選択しよう
+        </div>
+
         <a href="https://apps.apple.com/app/id6758301502" class="link-btn app-store">
-            <i class="fa-brands fa-apple"></i> App Storeで見る
+            <i class="fa-brands fa-apple icon-left"></i> App Storeで見る
         </a>
+
         <footer>
+            © KimitoQuest
         </footer>
     </div>
 
