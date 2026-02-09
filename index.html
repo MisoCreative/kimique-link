@@ -8,10 +8,10 @@
     <style>
         /* --- デザイン設定 --- */
         :root {
-            --bg-color: #f4f6f8;       /* 背景色 */
-            --text-color: #333;        /* 文字色 */
-            --card-bg: #ffffff;        /* ボタン等の背景色 */
-            --accent-color: #007AFF;   /* AppStoreブルー */
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --accent-color: #007AFF;
         }
 
         body {
@@ -28,7 +28,7 @@
 
         .container {
             width: 100%;
-            max-width: 400px; /* スマホ幅くらいに制限 */
+            max-width: 400px;
             padding: 40px 20px;
             text-align: center;
         }
@@ -42,12 +42,12 @@
         /* --- 案内ボックスのデザイン --- */
         .instruction-box {
             background-color: #fff;
-            border: 2px dashed #ddd;
+            border: 2px dashed #ddd; /* 破線 */
             border-radius: 15px;
-            padding: 15px;
+            padding: 20px;           /* 余白を少し広げました */
             margin-bottom: 25px;
             font-size: 0.85rem;
-            line-height: 1.6;
+            line-height: 1.8;        /* 行間を広げて読みやすく */
             color: #666;
             text-align: center;
         }
@@ -55,6 +55,8 @@
         .instruction-box strong {
             color: #333;
             font-weight: bold;
+            background: rgba(255, 255, 0, 0.15); /* 少しマーカーっぽく強調 */
+            padding: 0 4px;
         }
 
         .instruction-box i {
@@ -65,7 +67,13 @@
             color: #333;
         }
 
-        /* リンクボタンの共通スタイル */
+        /* ボックス内の区切り線 */
+        .instruction-divider {
+            border-top: 1px dashed #ddd;
+            margin: 15px 0;
+        }
+
+        /* リンクボタン */
         .link-btn {
             display: flex;
             align-items: center;
@@ -94,7 +102,6 @@
             left: 20px;
         }
 
-        /* App Storeボタン（メイン） */
         .app-store {
             background-color: #000;
             color: #fff;
@@ -102,25 +109,6 @@
             font-size: 1.1rem;
         }
 
-        /* --- 追加：検索ボタン（サブ） --- */
-        .search-btn {
-            background-color: #fff;
-            color: #555;
-            border: 1px solid #ddd;
-            font-size: 0.95rem;
-        }
-        .search-btn i.icon-left {
-            color: #888;
-            font-size: 1.2rem;
-        }
-
-        /* 補足テキスト */
-        .helper-text {
-            font-size: 0.8rem;
-            color: #888;
-            margin: 10px 0 5px;
-        }
-        
         footer {
             margin-top: 40px;
             font-size: 0.8rem;
@@ -137,16 +125,15 @@
             うまく開かない場合<br>
             右上の「<i class="fa-solid fa-ellipsis"></i>」を押して、<br>
             <strong>「ブラウザで開く」</strong>を選択しよう
+            
+            <div class="instruction-divider"></div>
+
+            それでも開かない場合は<br>
+            App Storeで<strong>「キミクエ」</strong>と検索！
         </div>
 
-        <a href="https://apps.apple.com/app/id6758301502" class="link-btn app-store" id="mainLink">
+        <a href="https://apps.apple.com/app/id6758301502" class="link-btn app-store">
             <i class="fa-brands fa-apple icon-left"></i> App Storeで見る
-        </a>
-
-        <p class="helper-text">または</p>
-        
-        <a href="https://apps.apple.com/jp/search?term=キミクエ" class="link-btn search-btn">
-            <i class="fa-solid fa-magnifying-glass icon-left"></i> 「キミクエ」を検索
         </a>
 
         <footer>
@@ -155,17 +142,20 @@
     </div>
 
     <script>
-        // ▼▼▼ 自動で飛ばしたい場合は、以下のコメントアウト（/* と */）を外してください ▼▼▼
+        // ▼▼▼ 自動で飛ばしたい場合は、以下の /* と */ を消してください ▼▼▼
         
         /*
         setTimeout(function() {
             // ストアのURLへ転送
             window.location.href = "https://apps.apple.com/app/id6758301502";
-        }, 1000); // 1000ミリ秒 = 1秒後に転送
+        }, 500); // 0.5秒後に転送
         */
        
         // ▲▲▲ ここまで ▲▲▲
     </script>
+
+</body>
+</html>
 
 </body>
 </html>
