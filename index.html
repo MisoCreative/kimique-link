@@ -36,13 +36,13 @@
         .name {
             font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 20px; /* 間隔を少し広げました */
+            margin-bottom: 20px;
         }
 
-        /* --- 追加箇所：案内ボックスのデザイン --- */
+        /* --- 案内ボックスのデザイン --- */
         .instruction-box {
             background-color: #fff;
-            border: 2px dashed #ddd; /* 破線で囲って注釈感を出す */
+            border: 2px dashed #ddd;
             border-radius: 15px;
             padding: 15px;
             margin-bottom: 25px;
@@ -94,13 +94,31 @@
             left: 20px;
         }
 
-        /* App Storeボタン */
+        /* App Storeボタン（メイン） */
         .app-store {
             background-color: #000;
             color: #fff;
-            /* 重要なボタンなので少し大きく目立たせる */
             padding: 18px 20px;
             font-size: 1.1rem;
+        }
+
+        /* --- 追加：検索ボタン（サブ） --- */
+        .search-btn {
+            background-color: #fff;
+            color: #555;
+            border: 1px solid #ddd;
+            font-size: 0.95rem;
+        }
+        .search-btn i.icon-left {
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        /* 補足テキスト */
+        .helper-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin: 10px 0 5px;
         }
         
         footer {
@@ -121,14 +139,33 @@
             <strong>「ブラウザで開く」</strong>を選択しよう
         </div>
 
-        <a href="https://apps.apple.com/app/id6758301502" class="link-btn app-store">
+        <a href="https://apps.apple.com/app/id6758301502" class="link-btn app-store" id="mainLink">
             <i class="fa-brands fa-apple icon-left"></i> App Storeで見る
+        </a>
+
+        <p class="helper-text">または</p>
+        
+        <a href="https://apps.apple.com/jp/search?term=キミクエ" class="link-btn search-btn">
+            <i class="fa-solid fa-magnifying-glass icon-left"></i> 「キミクエ」を検索
         </a>
 
         <footer>
             © KimitoQuest
         </footer>
     </div>
+
+    <script>
+        // ▼▼▼ 自動で飛ばしたい場合は、以下のコメントアウト（/* と */）を外してください ▼▼▼
+        
+        /*
+        setTimeout(function() {
+            // ストアのURLへ転送
+            window.location.href = "https://apps.apple.com/app/id6758301502";
+        }, 1000); // 1000ミリ秒 = 1秒後に転送
+        */
+       
+        // ▲▲▲ ここまで ▲▲▲
+    </script>
 
 </body>
 </html>
